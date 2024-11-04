@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.HospedagemContratada"
+             Title="HospedagemContratada"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Gray}">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+        <Label Text="Suíte Super Luxo" TextColor="{StaticResource Green}" FontFamily="LugrasimoRegular" FontSize="30" HorizontalTextAlignment="Center"/>
+
+        <Frame Margin="10">
+            <HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Adultos: "/>
+                    <Label Text="2" TextColor="{StaticResource Green}"/>
+                </HorizontalStackLayout>
+               
+                <HorizontalStackLayout>
+                    <Label Text="Crianças: "/>
+                    <Label Text="1" TextColor="{StaticResource Green}"/>
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Margin="10">
+            <Grid ColumnDefinitions="*,*,*"
+                  RowDefinitions="Auto, Auto">
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Check-in:"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Check-out:"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="Estadia:"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="04/11/2024"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="11/11/2024"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="7"/>
+
+            </Grid>
+        </Frame>
+
+        <Frame>
+            <HorizontalStackLayout>
+                <Label Text="Valor Total:"/>
+                <Label Text="R$ 750,00"/>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Button Text="Voltar" BackgroundColor="{StaticResource Blue}" Margin="15" HorizontalOptions="Center" Clicked="Button_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

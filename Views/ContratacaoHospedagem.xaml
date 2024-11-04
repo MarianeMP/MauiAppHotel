@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Gray}">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand" Padding="10" >
+        <Label           
+            Text="Cálculo da Diária"
+           FontFamily="LugrasimoRegular"
+            HorizontalOptions="Center"
+            FontSize="30"
+            TextColor="{StaticResource Green}"
+            Padding="15"/>
+
+        <Frame Padding="10">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*,*, 2*">
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Adultos:" />
+
+                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Value}" BindingContext="{x:Reference stp_adultos}" />
+
+                    <Stepper Grid.Row="0" Grid.Column="2" x:Name="stp_adultos" Minimum="0" Maximum="10" Increment="1"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Crianças:"/>
+
+                    <Label Grid.Row="1" Grid.Column="1"  Text="{Binding Value}" BindingContext="{x:Reference stp_criancas }" />
+
+                    <Stepper Grid.Row="1" Grid.Column="2" x:Name="stp_criancas" Minimum="0" Maximum="10" Increment="1"/>
+                </Grid>
+
+                <Label Text="Escolha sua Suíte" />
+                <Picker x:Name="pck_quarto"
+                        Title="Selecione sua Acomodação" ItemDisplayBinding="{Binding Descricao}"/>
+
+                <Frame Padding="10" Margin="10">
+                    <VerticalStackLayout>
+                        <Label Text="Período da Estadia"/>
+                        
+                        <HorizontalStackLayout>
+                            <Label Text="Check-in:"/>
+                            <DatePicker x:Name="dtpck_checkin" DateSelected="dtpck_checkin_DateSelected" Format="dd/MM/yyyy"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <Label Text="Check-out:"/>
+                            <DatePicker x:Name="dtpck_checkout" Format="dd/MM/yyyy"/>
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>   
+                </Frame>
+
+                <Button Text="Avançar" Margin="10" BackgroundColor="{StaticResource Blue}" Clicked="Button_Clicked_1"/>
+                <Button Text="Sobre" Margin="10" Clicked="Button_Clicked" BackgroundColor="{StaticResource Blue}"/>
+
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

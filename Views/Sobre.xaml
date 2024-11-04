@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre"
+             Padding="10"
+             BackgroundColor="{StaticResource Gray}">
+ 
+    <VerticalStackLayout VerticalOptions="CenterAndExpand" Padding="20" HorizontalOptions="Center">
+        <Frame>
+            <VerticalStackLayout BackgroundColor="{StaticResource White}" >
+                <Label Text="Página Desenvolvida por:"  FontAttributes="Bold"  TextColor="{StaticResource Blue}"/>
+                <Label Text="Mariane de Marchi Petherson" />
+                <Label Text="Ano de Desenvolvimento:" FontAttributes="Bold" TextColor="{StaticResource Blue}"/>
+                <Label Text="2024" HorizontalOptions="Center" />
+
+                <Button Text="Voltar" BackgroundColor="{StaticResource Blue}" Margin="15" HorizontalOptions="Center" Clicked="Button_Clicked"/>
+
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
